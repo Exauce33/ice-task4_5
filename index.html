@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Play a classic Snake browser game with a South African theme, save your high score, and learn how to play.">
+    <meta name="keywords" content="snake game, South African, browser game, JavaScript, WEDE5020, ICE Task 4 and 5">
+    <title>South African Snake Game | WEDE5020 ICE Task 4 and 5</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="page-content">
+        <section class="flag-section" aria-labelledby="flag-heading">
+            <h1 id="flag-heading">This game is proudly South African.</h1>
+            <div class="flag-box">
+                <div class="flag">
+                    <div class="flag-red"></div>
+                    <div class="flag-blue"></div>
+                    <div class="flag-white-y"></div>
+                    <div class="flag-gold-triangle"></div>
+                    <div class="flag-green-y"></div>
+                    <div class="flag-black-triangle"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="game-section" aria-labelledby="game-heading">
+            <h2 id="game-heading">South African Snake</h2>
+            <p class="game-instructions">Use the arrow keys to guide the snake. Eat the food and avoid the walls and your own tail.</p>
+            <p class="score-display">Score: <span id="score">0</span></p>
+            <div class="game-board">
+                <canvas id="game-canvas" width="400" height="400" aria-label="Snake game board"></canvas>
+                <div class="game-message" id="game-message">
+                    <h3 id="message-heading">Ready to play?</h3>
+                    <p id="message-text">Press Start to begin your game.</p>
+                    <button id="start-button" type="button">Start</button>
+                    <button id="restart-button" type="button" class="hidden">Restart</button>
+                </div>
+            </div>
+            <form id="score-form" class="score-form hidden" novalidate>
+                <label for="player-name">Your name for the top 5:</label>
+                <div class="form-controls">
+                    <input id="player-name" name="player-name" type="text" autocomplete="name" maxlength="30">
+                    <button type="submit">Save score</button>
+                </div>
+                <p id="name-error" class="error-message" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section class="high-scores-section" aria-labelledby="high-scores-heading">
+            <h2 id="high-scores-heading">Top 5 High Scores</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Place</th>
+                        <th scope="col">Player</th>
+                        <th scope="col">Score</th>
+                    </tr>
+                </thead>
+                <tbody id="high-score-list"></tbody>
+            </table>
+        </section>
+
+        <section class="tutorial-section" aria-labelledby="tutorial-heading">
+            <h2 id="tutorial-heading">How to Play Snake</h2>
+            <p>Watch a Snake tutorial, then try to beat the high scores.</p>
+            <div class="video-container">
+                <iframe
+                    src="https://www.youtube.com/embed/kZr8sR9Gwag"
+                    title="Snake game how-to-play tutorial video"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="video-note">
+                If the video does not play here, <a href="https://www.youtube.com/watch?v=kZr8sR9Gwag" target="_blank" rel="noopener noreferrer">watch the Snake Game Tutorial on YouTube</a>.
+            </p>
+        </section>
+    </main>
+</body>
+</html>
